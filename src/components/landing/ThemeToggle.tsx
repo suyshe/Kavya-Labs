@@ -5,7 +5,7 @@ export function ThemeToggle() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("lifeos-theme");
+    const stored = localStorage.getItem("kavya-theme");
     const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches;
     setDark(stored ? stored === "dark" : prefers);
   }, []);
@@ -21,7 +21,7 @@ export function ThemeToggle() {
       onClick={() => {
         const next = !dark;
         setDark(next);
-        localStorage.setItem("lifeos-theme", next ? "dark" : "light");
+        localStorage.setItem("kavya-theme", next ? "dark" : "light");
       }}
       className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-border bg-card/60 text-foreground transition-colors hover:bg-secondary"
     >
